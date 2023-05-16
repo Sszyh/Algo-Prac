@@ -40,3 +40,21 @@ var maxSubArray = function(nums) {
   }
   return max;
 };
+
+
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var maxSubArray = function(nums) {
+  let max = nums[0];
+  let tempSum = nums[0];
+  for (let i = 1; i < nums.length; i++) {
+      let num = nums[i];
+      tempSum = Math.max(num, tempSum + num);
+      max = Math.max(max, tempSum);
+  }
+  return max;
+};
+
+// O(N) Kadane's algorithm
